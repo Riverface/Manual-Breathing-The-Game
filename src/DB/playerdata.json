@@ -1,0 +1,64 @@
+{
+
+    "first": "",
+    "last": "",
+    "kills": [],
+    "meters": [{
+            "Name": "Health",
+            "Min": -10,
+            "Max": 10
+        },
+        {
+            "Min": 0,
+            "Name": "Magic",
+            "Max": 10
+        }
+    ],
+    "skills": [{
+        "Name": "First Aid",
+        "Description": "Find the most sanitary thing nearby or on your person and slather it on your wounds.",
+        "Potency": "10",
+        "Action": "Resolve(tar, 'HEAL', 10)",
+        "Multiplier": 1
+    }],
+    "resources": [{
+            "name": "Wood",
+            "critPower": 2,
+            "quantity": 1,
+            "tickRate": 1,
+            "batchSize": 1,
+            "multiplier": 1,
+            "offloadMultiplier": 1.50,
+            "fumbleRate": 0.75,
+            "critRate": 0.05,
+            "harvestRate": 1,
+            "fumbleMultiplie": 1
+        },
+        {
+            "name": "Stone",
+            "critPower": 2,
+            "quantity": 1,
+            "tickRate": 1,
+            "batchSize": 1,
+            "multiplier": 1,
+            "offloadMultiplier": 1.5,
+            "fumbleRate": 1,
+            "critRate": 0.03,
+            "harvestRate": 1,
+            "fumbleMultiplier": 1
+        },
+        {
+            "name": "Silver",
+            "critPower": 2,
+            "quantity": 1,
+            "tickRate": 1,
+            "batchSize": 1,
+            "multiplier": 1,
+            "offloadMultiplier": 1,
+            "fumbleRate": 1,
+            "critRate": 1,
+            "harvestRate": 1,
+            "fumbleMultiplie": 1
+        }
+    ]
+}
