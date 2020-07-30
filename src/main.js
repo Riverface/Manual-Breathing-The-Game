@@ -3,6 +3,7 @@ import "./Models/Resource.js";
 import $, { getJSON } from "jquery";
 // import Player from "./Models/Player.js";
 import { grabPlayer } from "./Models/jsonhelper.js";
+import { harvest, deliver } from "./DB/skillsDB.js";
 $(document).ready(function() {
     Main();
 });
@@ -18,10 +19,15 @@ function Tick(player) {
 
     setTimeout(() => {
         for (let index = 0; index < player.resources.length - 1; index++) {
-            console.log();
+            console.log(player);
             console.log(player.resources[index]);
-            player.resources[index].Harvest(0);
-            player.resources[index].Deliver(0);
+
+            harvest(player.resources[index], 1);
+
+
+            setTimeout(() => {
+                deliver(player.resources[index], 1);
+            }, player.TickRate);
         }
     }, player.TickRate);
 }

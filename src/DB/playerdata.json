@@ -14,6 +14,7 @@
             "Max": 10
         }
     ],
+    "tickRate": "1000",
     "skills": [{
         "Name": "First Aid",
         "Description": "Find the most sanitary thing nearby or on your person and slather it on your wounds.",
@@ -29,10 +30,10 @@
             "batchSize": 1,
             "multiplier": 1,
             "offloadMultiplier": 1.50,
-            "fumbleRate": 0.75,
-            "critRate": 0.05,
+            "fumbleRate": 0.05,
+            "critRate": 1.05,
             "harvestRate": 1,
-            "fumbleMultiplie": 1
+            "fumbleMultiplier": 0.5
         },
         {
             "name": "Stone",
@@ -42,10 +43,10 @@
             "batchSize": 1,
             "multiplier": 1,
             "offloadMultiplier": 1.5,
-            "fumbleRate": 1,
-            "critRate": 0.03,
+            "fumbleRate": 0.5,
+            "critRate": 1.03,
             "harvestRate": 1,
-            "fumbleMultiplier": 1
+            "fumbleMultiplier": 0.5
         },
         {
             "name": "Silver",
@@ -58,7 +59,7 @@
             "fumbleRate": 1,
             "critRate": 1,
             "harvestRate": 1,
-            "fumbleMultiplie": 1
+            "fumbleMultiplier": 1
         }
     ]
 }

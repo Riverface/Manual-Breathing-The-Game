@@ -11,7 +11,7 @@
         "fumbleRate": 0.75,
         "critRate": 0.05,
         "harvestRate": 1,
-        "fumbleMultiplie": 1
+        "fumbleMultiplier": 1
     },
     {
         "name": "Stone",
@@ -37,6 +37,6 @@
         "fumbleRate": 1,
         "critRate": 1,
         "harvestRate": 1,
-        "fumbleMultiplie": 1
+        "fumbleMultiplier": 1
     }
 ]

@@ -1,7 +1,7 @@
 export function grabPlayer() {
 
     let player = require("../DB/playerdata.json");
-    console.log(player);
+    console.log('inside jsonhelper.js', player);
 
     return player;
 }

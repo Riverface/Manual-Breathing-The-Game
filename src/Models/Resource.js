@@ -1,8 +1,3 @@
-import "../libraries/MathFunctions.js";
-import "lerp";
-import lerp from "lerp";
-
-
 export function Resource(
     name,
     critPower,

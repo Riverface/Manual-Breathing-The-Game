@@ -1,50 +1,64 @@
-export function Harvest(harvestPhase) {
+import getRandomArbitrary from "../libraries/MathFunctions.js";
+import "lerp";
+import lerp from "lerp";
+
+export function harvest(resource, harvestPhase = 0) {
+    console.log('Harvesting, fail rate of ', resource.fumbleRate);
     setTimeout(() => {
-        if (getRandomArbitrary(this.fumbleRate, 1) == this.fumbleRate) {
-            this.batchSize += harvestPhase * multiplier * this.fumbleMultiplier;
-            console.log("Harvesting fumbled! Only got, " + (this.multiplier * this.fumbleMultiplier));
+        switch (getRandomArbitrary) {
+            case value:
+
+                break;
+
+            default:
+                break;
         }
-        if (getRandomArbitrary(this.critRate, 1) == this.critRate) {
-            this.batchSize += harvestPhase * multiplier * this.critPower;
+        if (getRandomArbitrary(resource.fumbleRate, 1) == resource.fumbleRate) {
+            resource.batchSize += harvestPhase * resource.multiplier * resource.fumbleMultiplier;
+            console.log("Harvest fumbled! Only got, " + (resource.multiplier * resource.fumbleMultiplier));
+        } else if (getRandomArbitrary(resource.critRate, 1) == resource.critRate) {
+            resource.batchSize += harvestPhase * multiplier * resource.critPower;
+            console.log("Batch is increased to " + resource.batchSize + " " + resource.name);
         }
-        if (harvestPhase >= 3) {
+
+        if (harvestPhase > 3) {
             console.log("Done harvesting! o7");
         } else {
-            this.Harvest(harvestPhase);
             harvestPhase++;
+            harvest(resource, harvestPhase);
         }
-    }, harvestRate * harvestPhase * tickRate);
+    }, resource.harvestRate * harvestPhase);
 };
 
-export function Deliver() {
-    const delAmountFumble = offloadMultiplier * this.fumbleMultiplier;
-    const delAmountCrit = offloadMultiplier * this.critPower;
+export function deliver(resource, deliverPhase = 0) {
+    const delAmountFumble = resource.offloadMultiplier * resource.fumbleMultiplier;
+    const delAmountCrit = resource.offloadMultiplier * resource.critPower;
 
     setTimeout(() => {
-        if (getRandomArbitrary(this.fumbleRate, 1) == this.fumbleRate) {
-            if (this.batchSize -= delAmountFumble >= 0) {
-                lerp(this.quantity, this.quantity + delAmountFumble);
-                lerp(this.batchSize, this.batchSize -= delAmountFumble);
+        if (getRandomArbitrary(resource.fumbleRate, 1) == resource.fumbleRate) {
+            if (resource.batchSize -= delAmountFumble >= 0) {
+                lerp(resource.quantity, resource.quantity + delAmountFumble, 1);
+                lerp(resource.batchSize, resource.batchSize -= delAmountFumble), 1;
             } else {
-                lerp(this.quantity, this.quantity += this.batchSize);
-                lerp(this.quantity, 0);
+                lerp(resource.quantity, resource.quantity += resource.batchSize, 1);
+                lerp(resource.quantity, 0, 1);
             }
-        } else if (getRandomArbitrary(this.critRate, 1) == this.critRate) {
-            if (this.batchSize -= offloadMultiplier * batchSize >= 0) {
-                lerp(this.quantity, (this.quantity + delAmountCrit));
-                lerp(this.batchSize, (this.batchSize - delAmountCrit));
+        } else if (getRandomArbitrary(resource.critRate, 1) == resource.critRate) {
+            if (resource.batchSize -= resource.offloadMultiplier * batchSize >= 0) {
+                lerp(resource.quantity, (resource.quantity + delAmountCrit), 1);
+                lerp(resource.batchSize, (resource.batchSize - delAmountCrit), 1);
             } else {
-                lerp(this.quantity, this.quantity + batchSize);
-                lerp(this.quantity, 0);
+                lerp(resource.quantity, resource.quantity + resource.batchSize, 1);
+                lerp(resource.quantity, 0, 1);
             }
         }
-        if (batchSize == 0) {
+        if (resource.batchSize == 0) {
             console.log("Done offloading! o7");
         } else {
-            this.Deliver(harvestPhase);
             deliverPhase++;
+            deliver(resource, deliverPhase);
         }
-    }, harvestRate * harvestPhase);
+    }, resource.harvestRate * deliverPhase);
 
 
 };
