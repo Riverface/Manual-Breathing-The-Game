@@ -1,43 +1,3 @@
-export default function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}
-//sides of dice, par for dice, crit for dice, critical fail for dice, amount of dice
-export function rollDice(sides, par, crit, critfail, rolls, dice) {
-    let diceroll = {
-        sides: sides,
-        par: par,
-        crit: crit,
-        critfail: critfail,
-        rolls: [],
-        dice: dice,
-    };
-
-    console.log("Rolling " + sides + " sided dice");
-
-    setTimeout(() => {
-        for (let index = 0; index < array.length; index++) {
-
-            switch (diceroll) {
-                case diceroll <= critfail:
-                    return ["critfail", diceroll.rolls[index]];
-                case diceroll < fail:
-                    return ["fail", diceroll.rolls[index]];
-                    break;
-                case diceroll >= dicePar && diceroll < diceCrit:
-                    return ["pass", diceroll.rolls[index]];
-                    break;
-                case diceroll >= diceCrit:
-                    return ["crit", diceroll.rolls[index]];
-                    break;
-            }
-        }
-    });
-}
-
-function generateGrid() {
-
-}
-
 function coinCounter(
     money = 1018,
     x = {
@@ -91,3 +51,113 @@ function coinCounter(
     }
     return mode ? quarters(x.q) + dimes(x.d) + nickels(x.n) + pennies(x.p) : x;
 }
+
+console.log(
+    coinCounter(
+        (money = 25 * 1.4),
+        (x = {
+            x: 0,
+            q: 0,
+            d: 0,
+            n: 0,
+            p: 0,
+        }),
+        (mode = true)
+    )
+);
+console.log(
+    coinCounter(
+        (money = 25 * 1.4),
+        (x = {
+            x: 0,
+            q: 0,
+            d: 0,
+            n: 0,
+            p: 0,
+        }),
+        (mode = true)
+    )
+);
+
+console.log(
+    coinCounter(
+        (money = 10 * 1.4),
+        (x = {
+            x: 0,
+            q: 0,
+            d: 0,
+            n: 0,
+            p: 0,
+        }),
+        (mode = true)
+    )
+);
+
+console.log(
+    coinCounter(
+        (money = 5),
+        (x = {
+            x: 0,
+            q: 0,
+            d: 0,
+            n: 0,
+            p: 0,
+        }),
+        (mode = true)
+    )
+);
+
+console.log(
+    coinCounter(
+        (money = 25),
+        (x = {
+            x: 0,
+            q: 0,
+            d: 0,
+            n: 0,
+            p: 0,
+        }),
+        (mode = true)
+    )
+);
+console.log(
+    coinCounter(
+        (money = 25),
+        (x = {
+            x: 0,
+            q: 0,
+            d: 0,
+            n: 0,
+            p: 0,
+        }),
+        (mode = true)
+    )
+);
+
+console.log(
+    coinCounter(
+        (money = 10),
+        (x = {
+            x: 0,
+            q: 0,
+            d: 0,
+            n: 0,
+            p: 0,
+        }),
+        (mode = true)
+    )
+);
+
+console.log(
+    coinCounter(
+        (money = 5),
+        (x = {
+            x: 0,
+            q: 0,
+            d: 0,
+            n: 0,
+            p: 0,
+        }),
+        (mode = true)
+    )
+);
