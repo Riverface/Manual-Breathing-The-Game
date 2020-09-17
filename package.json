@@ -32,10 +32,15 @@
         "babel-cli": "^6.26.0",
         "babel-loader": "^8.1.0",
         "bootstrap": "^4.3.1",
+        "chance": "^1.1.7",
+        "generator": "^1.0.1",
         "jquery": "^3.5.1",
         "json": "^9.0.6",
         "lerp": "^1.0.3",
+        "lodash": "^4.17.19",
+        "name": "0.0.2",
         "popper.js": "^1.15.0",
-        "uglify-js": "^3.10.0"
+        "uglify-js": "^3.10.0",
+        "unique-names-generator": "^4.3.1"
     }
 }

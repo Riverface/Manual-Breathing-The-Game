@@ -1,37 +1,35 @@
-import { types } from "@babel/core";
-import "./Models/Resource.js";
-import $, { getJSON } from "jquery";
-// import Player from "./Models/Player.js";
-import { grabPlayer } from "./Models/jsonhelper.js";
-import { harvest, deliver } from "./DB/skillsDB.js";
-import "./plant.js";
+import $ from 'jquery';
+import bootstrap from "bootstrap";
+var _ = require('lodash');
 
+
+const { generate_Character, aggress } = require("./Models/Character");
 $(document).ready(function() {
-    // Main();
-    Plants();
+    $("#randomCharacter").on("click", function() {
+        $("#main-log").append(test());
+        test();
+    });
 });
 
-function Plants() {
+const test = () => {
+    let thisCharacter = Object.assign(generate_Character());
+    let otherCharacter = Object.assign(generate_Character());
+    let thisAtom = $(".atomicTemplate").clone();
+    console.log(thisCharacter);
 
-}
-
-function Main() {
-    let player = grabPlayer();
     setInterval(() => {
-        Tick(player);
-    }, 1000);
-}
+        aggress(thisCharacter)(otherCharacter);
+        aggress(otherCharacter)(thisCharacter);
+        console.log(thisCharacter);
+        console.log(otherCharacter);
+    }, 500);
 
-// Tick for gems
-function Tick(player) {
-    setTimeout(() => {
-        for (let index = 0; index < player.resources.length - 1; index++) {
-            console.log(player);
-            console.log(player.resources[index]);
-            harvest(player, player.resources[index], 1);
-            setTimeout(() => {
-                deliver(player, player.resources[index], 1);
-            }, player.TickRate);
-        }
-    }, player.TickRate);
+    // thisAtom.find(".mus").html(`base MUS :<div class='statBox'>${thisCharacter.attributes.muscle.statBase}</div>`);
+    // thisAtom.find(".cla").html(`base CLA :<div class='statBox'>${thisCharacter.attributes.clarity.statBase}</div>`);
+    // thisAtom.find(".qui").html(`base QUI :<div class='statBox'>${thisCharacter.attributes.quickness.statBase}</div>`);
+    // thisAtom.find(".jud").html(`base JUD :<div class='statBox'>${thisCharacter.attributes.judgement.statBase}</div>`);
+    // thisAtom.find(".for").html(`base FOR :<div class='statBox'>${thisCharacter.attributes.fortune.statBase}</div>`);
+    console.log(thisCharacter);
+    $("#main-log").append(thisAtom);
+    $("#whatjusthappened").text(thisAtom);
 }

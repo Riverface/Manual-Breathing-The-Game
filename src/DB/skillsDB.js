@@ -5,7 +5,7 @@ import getRandomArbitrary from "../libraries/MathFunctions.js";
 import rollDice from "../libraries/MathFunctions.js";
 import "../plant.js";
 
-export function harvest(player, resource, harvestPhase = 0) {
+export function harvest(player, resource, harvestPhase = 0, workers = 1) {
     console.log("Harvesting, fail rate of ", resource.fumbleRate);
     let rolled = rollDice(6, 3, 6, 1, [], 3);
     setTimeout(() => {
@@ -52,7 +52,7 @@ export function harvest(player, resource, harvestPhase = 0) {
     }, resource.harvestRate * harvestPhase);
 }
 
-export function deliver(resource, deliverPhase = 0) {
+export function deliver(resource, deliverPhase = 0, workers = 1) {
     const delAmountFumble =
         resource.offloadMultiplier * resource.fumbleMultiplier;
     const delAmountCrit = resource.offloadMultiplier * resource.critPower;
