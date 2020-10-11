@@ -1,3 +1,4 @@
+**Note that the frontend is very broken because I couldn't keep it simple, stupid. Will be converted to React later.
 ## Specs
 
 # Pumpkin farmer
